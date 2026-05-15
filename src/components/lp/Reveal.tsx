@@ -4,14 +4,12 @@ export function Reveal({
   children,
   delay = 0,
   className = "",
-  as: As = "div",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: keyof React.JSX.IntrinsicElements;
 }) {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -31,13 +29,12 @@ export function Reveal({
   }, []);
 
   return (
-    // @ts-expect-error dynamic tag
-    <As
-      ref={ref as never}
+    <div
+      ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={`reveal ${visible ? "in" : ""} ${className}`}
     >
       {children}
-    </As>
+    </div>
   );
 }
