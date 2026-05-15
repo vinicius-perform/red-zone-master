@@ -1,26 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/lp/Nav";
+import { Hero } from "@/components/lp/Hero";
+import { PainSection } from "@/components/lp/PainSection";
+import { ModulesSection } from "@/components/lp/ModulesSection";
+import { TransformationSection } from "@/components/lp/TransformationSection";
+import { SocialProof } from "@/components/lp/SocialProof";
+import { CommunitySection } from "@/components/lp/CommunitySection";
+import { BonusSection } from "@/components/lp/BonusSection";
+import { FinalCTA } from "@/components/lp/FinalCTA";
+import { Footer } from "@/components/lp/Footer";
+import { FloatingWhats } from "@/components/lp/FloatingWhats";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Domine a Sala Vermelha — Treinamento de Emergência | EmergPapers" },
+      {
+        name: "description",
+        content:
+          "Treinamento prático para médicos: via aérea, ventilação, procedimentos e decisão sob pressão. Domine a sala vermelha antes do próximo plantão.",
+      },
+      { property: "og:title", content: "Domine a Sala Vermelha | EmergPapers" },
+      {
+        property: "og:description",
+        content:
+          "De médico inseguro a médico resolutivo. Treinamento de elite em emergências reais.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="relative bg-background text-foreground antialiased">
+      <Nav />
+      <Hero />
+      <PainSection />
+      <ModulesSection />
+      <TransformationSection />
+      <SocialProof />
+      <CommunitySection />
+      <BonusSection />
+      <FinalCTA />
+      <Footer />
+      <FloatingWhats />
+    </main>
+  );
 }
