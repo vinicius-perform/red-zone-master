@@ -1,11 +1,7 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
-export const WHATSAPP_URL =
-  "https://wa.me/5500000000000?text=" +
-  encodeURIComponent(
-    "Olá! Quero mais informações sobre o curso Domine a Sala Vermelha."
-  );
+export const WHATSAPP_URL = "https://wa.link/0jk0dh";
 
 export function CTAButton({
   children,

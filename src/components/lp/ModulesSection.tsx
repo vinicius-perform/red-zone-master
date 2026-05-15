@@ -9,6 +9,23 @@ import vent from "@/assets/module-ventilation.jpg";
 import procImg from "@/assets/module-procedures.jpg";
 import { Reveal } from "./Reveal";
 import { CTAButton } from "./CTAButton";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+const posterModules = [
+  "https://emergpapers.com/wp-content/uploads/2026/05/OB.png",
+  "https://emergpapers.com/wp-content/uploads/2026/05/Procedimentos.png",
+  "https://emergpapers.com/wp-content/uploads/2026/05/ECG.png",
+  "https://emergpapers.com/wp-content/uploads/2026/05/ATB.png",
+  "https://emergpapers.com/wp-content/uploads/2026/05/POCUS.png",
+  "https://emergpapers.com/wp-content/uploads/2026/05/Coracao.png",
+  "https://emergpapers.com/wp-content/uploads/2026/05/VAB.png"
+];
 
 const featured = [
   { title: "Manejo de Via Aérea", subtitle: "Sequência rápida. Plano A, B, C, D.", img: airway },
@@ -100,7 +117,43 @@ export function ModulesSection() {
           </div>
         </Reveal>
 
-        <div className="mt-12 flex justify-center">
+        {/* Posters Modules Carousel */}
+        <Reveal className="mt-16">
+          <div className="flex items-baseline justify-between mb-8">
+            <h3 className="font-display text-2xl sm:text-3xl uppercase tracking-wide">Módulos Exclusivos</h3>
+            <span className="hidden sm:inline-block text-xs text-primary uppercase tracking-widest text-glow-red font-semibold">Séries Premium</span>
+          </div>
+          <div className="w-full relative">
+            <Carousel
+              opts={{
+                align: "start",
+                dragFree: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4 py-4">
+                {posterModules.map((src, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-[55%] sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <article className="group relative w-full aspect-[2/3] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow hover:border-primary/40 cursor-grab active:cursor-grabbing">
+                      <img
+                        src={src}
+                        alt={`Módulo Exclusivo ${index + 1}`}
+                        loading="lazy"
+                        className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                      />
+                    </article>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="hidden xl:block">
+                <CarouselPrevious className="-left-14" />
+                <CarouselNext className="-right-14" />
+              </div>
+            </Carousel>
+          </div>
+        </Reveal>
+
+        <div className="mt-16 flex justify-center">
           <CTAButton size="lg">Quero acesso completo</CTAButton>
         </div>
       </div>
