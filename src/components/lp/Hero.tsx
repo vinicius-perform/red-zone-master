@@ -31,7 +31,7 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 -z-10 h-[50vh] bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-primary/10 blur-[150px] -z-10 animate-float" />
 
-      <div className="relative mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         {/* 1. Badge */}
         <div className="inline-flex items-center gap-2 rounded-full glass-red px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-primary/90 mb-6 animate-fade-up">
           <span className="size-1.5 rounded-full bg-primary animate-pulse" />
@@ -39,15 +39,17 @@ export function Hero() {
         </div>
 
         {/* 2. Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.95] uppercase max-w-4xl animate-fade-up">
-          Pare de <span className="text-muted-foreground">sobreviver</span> ao plantão.
-          <span className="block mt-3 text-primary text-glow-red">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] uppercase max-w-5xl animate-fade-up flex flex-col items-center">
+          <span className="block whitespace-nowrap text-[6.8vw] sm:text-[5.5vw] md:text-6xl lg:text-7xl xl:text-[5.5rem] tracking-tight">
+            Pare de <span className="text-muted-foreground">sobreviver</span> ao plantão.
+          </span>
+          <span className="block mt-3 text-primary text-glow-red text-[7vw] sm:text-[5.8vw] md:text-6xl lg:text-7xl xl:text-[5.5rem] tracking-tight">
             Domine a Sala Vermelha.
           </span>
         </h1>
 
         {/* 3. Video (Monumental!) */}
-        <div className="mt-10 w-full max-w-4xl animate-fade-up [animation-delay:150ms] shadow-glow relative z-10">
+        <div className="mt-10 w-full max-w-5xl animate-fade-up [animation-delay:150ms] shadow-glow relative z-10">
           <VideoPlayer videoId="elvlGNo9XaE" />
         </div>
 
