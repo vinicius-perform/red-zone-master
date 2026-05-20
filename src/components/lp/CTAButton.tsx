@@ -1,7 +1,7 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
-export const WHATSAPP_URL = "https://wa.link/0jk0dh";
+export const WHATSAPP_URL = "https://wa.link/heda24";
 
 export function CTAButton({
   children,
