@@ -100,9 +100,6 @@ export function VideoPlayer({ videoId }: VideoPlayerProps) {
               (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
             }}
           />
-          {/* Overlay gradiente escuro e vermelho */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-          <div className="absolute inset-0 bg-primary/10 mix-blend-color-burn" />
 
           {/* Botão de Play Central com Efeito Ripple Pulsante */}
           <button
@@ -118,17 +115,6 @@ export function VideoPlayer({ videoId }: VideoPlayerProps) {
               <Play className="size-6 sm:size-8 fill-current translate-x-0.5 text-white" />
             </div>
           </button>
-
-          {/* Chamada para ação sutil sobre o vídeo */}
-          <div className="absolute bottom-6 left-6 right-6 text-left pointer-events-none">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/95 text-[10px] font-semibold text-white uppercase tracking-wider mb-2">
-              <span className="size-1.5 rounded-full bg-white animate-pulse" />
-              Assista Agora
-            </span>
-            <p className="text-white font-medium text-sm sm:text-base drop-shadow-md line-clamp-1">
-              Descubra como dominar a sala vermelha e ter total segurança.
-            </p>
-          </div>
         </div>
       ) : (
         // REPRODUTOR DE VÍDEO DO YOUTUBE TOTALMENTE PROTEGIDO
